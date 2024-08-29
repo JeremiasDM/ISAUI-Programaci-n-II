@@ -44,6 +44,10 @@ import tkinter as tk
 from tkinter import messagebox, Radiobutton
 import random
 
+import tkinter as tk
+from tkinter import messagebox, Radiobutton
+import random
+
 class JuegoMatematicoApp:
     def __init__(self, root):
         self.root = root
@@ -59,13 +63,13 @@ class JuegoMatematicoApp:
         self.dificultad_label = tk.Label(root, text="Dificultad", bg='#69002C', fg='white')
         self.dificultad_label.grid(row=0, column=0, sticky="w")
 
-        self.facil_rb = Radiobutton(root, text="Fácil (0-10)", variable=self.dificultad, value="Facil", command=self.reset, bg='#69002C', fg='white')
+        self.facil_rb = Radiobutton(root, text="Fácil (0-10)", variable=self.dificultad, value="Facil", command=self.reset, bg='#69002C', fg='white', selectcolor="#AA0044")
         self.facil_rb.grid(row=1, column=0, sticky="w")
 
-        self.medio_rb = Radiobutton(root, text="Medio (0-100)", variable=self.dificultad, value="Medio", command=self.reset, bg='#69002C', fg='white')
+        self.medio_rb = Radiobutton(root, text="Medio (0-100)", variable=self.dificultad, value="Medio", command=self.reset, bg='#69002C', fg='white', selectcolor="#AA0044")
         self.medio_rb.grid(row=2, column=0, sticky="w")
 
-        self.dificil_rb = Radiobutton(root, text="Difícil (0-1000)", variable=self.dificultad, value="Dificil", command=self.reset, bg='#69002C', fg='white')
+        self.dificil_rb = Radiobutton(root, text="Difícil (0-1000)", variable=self.dificultad, value="Dificil", command=self.reset, bg='#69002C', fg='white', selectcolor="#AA0044")
         self.dificil_rb.grid(row=3, column=0, sticky="w")
 
         self.juegos_label = tk.Label(root, text="Juegos: 0", bg='#69002C', fg='white')
@@ -78,16 +82,16 @@ class JuegoMatematicoApp:
         self.malos_label.grid(row=2, column=1, sticky="e")
 
         self.numero1_entry = tk.Entry(root, state='readonly', justify='center')
-        self.numero1_entry.grid(row=4, column=0, columnspan=2, sticky="we")
+        self.numero1_entry.grid(row=4, column=0, columnspan=2, sticky="we", pady=(0, 20))
 
         self.operacion_label = tk.Label(root, textvariable=self.operacion, bg='#69002C', fg='white')
         self.operacion_label.grid(row=5, column=0, columnspan=2)
 
         self.numero2_entry = tk.Entry(root, state='readonly', justify='center')
-        self.numero2_entry.grid(row=6, column=0, columnspan=2, sticky="we")
+        self.numero2_entry.grid(row=6, column=0, columnspan=2, sticky="we", pady=(20, 20))
 
         self.resultado_entry = tk.Entry(root, justify='center')
-        self.resultado_entry.grid(row=7, column=0, columnspan=2, sticky="we")
+        self.resultado_entry.grid(row=7, column=0, columnspan=2, sticky="we", pady=(0, 20))
 
         self.nuevo_numero_button = tk.Button(root, text="Nuevo Número", command=self.generar_numeros)
         self.nuevo_numero_button.grid(row=8, column=0, sticky="we")
@@ -166,4 +170,6 @@ class JuegoMatematicoApp:
 root = tk.Tk()
 app = JuegoMatematicoApp(root)
 root.mainloop()
+
+
 
